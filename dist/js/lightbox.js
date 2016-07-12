@@ -240,10 +240,10 @@
         // Fit image inside the viewport.
         // Take into account the border around the image and an additional 10px gutter on each side.
 
-        windowWidth    = $(window).width();
-        windowHeight   = $(window).height();
+        windowWidth    = window.innerWidth;
+        windowHeight   = window.innerHeight;
         maxImageWidth  = windowWidth - self.containerLeftPadding - self.containerRightPadding - 20;
-        maxImageHeight = windowHeight - self.containerTopPadding - self.containerBottomPadding - 120;
+        maxImageHeight = windowHeight - self.containerTopPadding - self.containerBottomPadding - 35 - 20 - self.options.positionFromTop;
 
         // Check if image size is larger then maxWidth|maxHeight in settings
         if (self.options.maxWidth && self.options.maxWidth < maxImageWidth) {
